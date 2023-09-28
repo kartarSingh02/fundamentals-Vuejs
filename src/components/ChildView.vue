@@ -4,6 +4,7 @@
     <!-- html binding we dont need to use {{ }} directlty -->
     <div v-html="tag1"></div>
     <button class="btn btn-primary" v-on:click="colorfull=!colorfull">Change Style</button>
+    <button class="btn btn-success" v-on:click="getUser(userName)">Send User Name</button>
 </template>
 
 <script>
@@ -12,14 +13,17 @@
         props:{
             name:String,
             getdata:Function,
+            getUser:Function
             // html binding
         },
         data(){
             return{
                 tag1: "<h1>Kartar Singh</h1>",
-                colorfull:true
+                colorfull:true,
+                userName: "hahaiiii"
             }
-        }
+        },
+
     }
 </script>
 

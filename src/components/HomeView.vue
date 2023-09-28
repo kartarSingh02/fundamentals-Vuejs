@@ -1,13 +1,15 @@
 <template>
 <div class="container">
-    <h1>Home Component</h1>
+    <!-- <h1>Home Component</h1>
     <p>{{homeMsg}}</p>
     <button v-on:click="counter()">Counter</button> 
     <h3>{{ count }}</h3>
-    <ChildView name="kartar Singh" :getdata='getdata'/>
+    <ChildView name="kartar Singh" :getdata='getdata'/> -->
+    <ChildView :getUser="getUserName"/>
+    <h1>{{userName}}</h1>
     <!-- we use two way binding to reduce time and code complexity using v-model -->
-    <input id="inputVar" type="text" v-model="name" />
-    <h3>{{ name }}</h3>
+    <!-- <input id="inputVar" type="text" v-model="name" />
+    <h3>{{ name }}</h3> -->
     </div>
 </template>
 
@@ -21,15 +23,19 @@ import ChildView from './ChildView.vue';
         data(){
             return {
                 count:0,
-                name:"kartareeyaaa"
+                name:"kartareeyaaa",
+                userName:""
             }
         },
         methods:{
             counter(){
                 this.count=this.count+1
             },
-            getdata(name){
-                alert(name);   
+            // getdata(name){
+            //     alert(name);   
+            // },
+            getUserName(name){
+                this.userName=name
             }
         },
         components:{
