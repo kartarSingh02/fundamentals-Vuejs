@@ -6,6 +6,9 @@
     <h1>{{ add(2,4) }}</h1>
     <h1>{{ getSum(5,4) }}</h1>
     <h1>{{ name }}</h1> -->
+    <h1>{{count}}</h1>
+    <button class="btn btn-primary" v-on:click="count=count+1">+</button>
+    <button class="btn btn-primary" v-on:click="count=count-1">-</button>
   </div>
 </template>
 
@@ -32,6 +35,25 @@ export default {
   //       return this.add(a,b)
   //     }
   // }
+  // WATCHERS CONCEPT 
+  data(){
+    return{
+      count:0
+    }
+  },
+  // in watch we have to write the same name as data property to make it work, this observe and react to changes in a specific data property or computed property
+  watch:{
+    count(val,prev){
+      if(val>5 && val>prev){
+        alert("Value Greater then 5")
+      }
+    }
+  }
 }
 </script>
 
+<style>
+h1{
+  color: red;
+}
+</style>

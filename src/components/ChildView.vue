@@ -5,6 +5,9 @@
     <div v-html="tag1"></div>
     <button class="btn btn-primary" v-on:click="colorfull=!colorfull">Change Style</button>
     <button class="btn btn-success" v-on:click="getUser(userName)">Send User Name</button>
+
+    <input class="my-2 mx-3" type="text" ref="inputfield"/>
+    <button v-on:click="changeinputstyles()">click kr be</button>
 </template>
 
 <script>
@@ -23,6 +26,13 @@
                 userName: "hahaiiii"
             }
         },
+        methods:{
+            changeinputstyles(){
+                this.$refs.inputfield.focus();
+                let value =this.$refs.inputfield.value;
+                console.log(value);
+            }
+        }
 
     }
 </script>
