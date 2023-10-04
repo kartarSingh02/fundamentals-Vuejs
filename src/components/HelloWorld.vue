@@ -1,6 +1,6 @@
 <template>
   <div class="hello container">
-    <h1>This is Counter</h1>
+    <h1>This is {{ profile }}'s Counter</h1>
     <h1>{{ msg }}</h1>
     <!-- <P>{{ email}}</P>
     <P>{{ email = "abcd@gmail.com"}}</P>
@@ -14,8 +14,16 @@
 </template>
 
 <script>
+import { useRoute } from "vue-router";
 export default {
   name: "HelloWorld",
+
+  mounted() {
+    const route = useRoute();
+    console.warn("route", route.params.name);
+    this.profile = route.params.name;
+  },
+
   props: {
     msg: String,
   },
@@ -40,6 +48,7 @@ export default {
   data() {
     return {
       count: 0,
+      profile: "",
     };
   },
   // in watch we have to write the same name as data property to make it work, this observe and react to changes in a specific data property or computed property

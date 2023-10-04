@@ -10,7 +10,9 @@
   <!-- <component :is="tab" /> -->
   <router-link to="/" class="mx-2">Home</router-link>
   <router-link to="/login" class="mx-2">Login</router-link>
-  <router-link to="/helloworld" class="mx-2">HelloWorld</router-link>
+  <!-- <router-link to="/helloworld" class="mx-2">HelloWorld</router-link> -->
+  <router-link to="/helloworld/pranav" class="mx-2">HelloWorld pranav</router-link>
+  <router-link to="/helloworld/bindu" class="mx-2">HelloWorld bindu</router-link>
   <router-view></router-view>
 </template>
 
